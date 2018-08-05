@@ -34,15 +34,14 @@ function viewCart() {
 function sumAll(){
  var sum = 0
   for (let i=0; i<getCart().length; i++) {
- sum = sum + getCart()[i].itemPrice
+ sum += getCart()[i].itemPrice
      }
  return sum
   }
 
-function total() {
-var allsum = sumAll()
-return allsum
-}
+
+
+
 
 
 function removeFromCart(item) {
@@ -61,7 +60,7 @@ function placeOrder(cardNumber) {
 if (!cardNumber) {
     return "Sorry, we don't have a credit card on file for you."
   }
-    var final = `Your total cost is $${total()}, which will be charged to the card ${cardNumber}.`
+    var final = `Your total cost is $${sumAll()}, which will be charged to the card ${cardNumber}.`
     cart= []
     return final
 }
